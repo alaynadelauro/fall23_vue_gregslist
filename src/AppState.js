@@ -12,4 +12,6 @@ export const AppState = reactive({
 
   /**@type {import('.models/House.js').House[]} */
   houses: [],
+
+  formOpen: false,
 })
