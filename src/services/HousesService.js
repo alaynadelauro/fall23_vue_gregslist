@@ -3,6 +3,7 @@ import { AppState } from "../AppState"
 import Pop from "../utils/Pop"
 import { api } from "./AxiosService"
 import { House } from "../models/House"
+import { logger } from "../utils/Logger"
 
 class HousesService {
     async getHouses() {
@@ -15,6 +16,12 @@ class HousesService {
         } catch (error) {
             Pop.error(error)
         }
+    }
+    async createHouse(houseData) {
+        const res = api.post('api/houses', houseData)
+        logger.log(res)
+        const newHouse = new House((await res).data)
+        AppState.houses.push(newHouse)
     }
 }
 
