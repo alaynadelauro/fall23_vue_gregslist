@@ -8,7 +8,7 @@
                 <p v-if="account.id == houseProp.creatorId">This is Your House!</p>
                 <p v-if="account.id != houseProp.creatorId">Could be yours for {{ houseProp.price }}</p>
                 <div class="justify-content-end d-flex mt-3">
-                    <router-link :to="{ name: 'ActiveHousePage', params: { HouseId: houseProp.id } }">
+                    <router-link :to="{ name: 'HouseDetails', params: { HouseId: houseProp.id } }">
                         <button class="btn submitButton">View Details</button>
                     </router-link>
                 </div>

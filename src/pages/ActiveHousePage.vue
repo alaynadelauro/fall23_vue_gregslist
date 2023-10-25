@@ -22,9 +22,12 @@
 <script>
 import { computed } from 'vue';
 import { AppState } from '../AppState';
+import { useRoute, useRouter } from 'vue-router';
 
 export default {
     startup() {
+        const route = useRoute()
+        const router = useRouter()
         return {
             activeHouse: computed(() => AppState.activeHouse)
         }
