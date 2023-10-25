@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { authGuard } from '@bcwdev/auth0provider-client'
+// import HousesPageVue from './pages/HousesPage.vue'
 
 function loadPage(page) {
   return () => import(`./pages/${page}.vue`)
@@ -25,6 +26,11 @@ const routes = [
     path: '/cars/:carId',
     name: 'CarDetails',
     component: loadPage('CarDetailsPage')
+  },
+  {
+    path: '/houses',
+    name: 'Houses',
+    component: loadPage('HousesPage')
   },
   {
     path: '/account',
